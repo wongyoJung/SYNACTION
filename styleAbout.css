@@ -1,0 +1,488 @@
+body{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+a{
+  text-decoration:none;
+}
+
+.gate{
+  display:grid;
+  grid-template-columns:3fr 600px;
+  margin-bottom:0px;
+  margin-top:0px;
+  z-index:100;
+  border-bottom-style:solid;
+  border-bottom-width:2px;
+  border-bottom-color:#eaeaea;
+}
+
+
+.Titles{
+  margin:0px;
+  height:45px;
+  position:relative;
+  align-items: flex-start;
+
+
+}
+
+.Titles h1{ display:inline; padding:0;
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+#name{
+  font-size:26px;
+  text-align:left;
+  /* width:896.400; */
+  top:2.5px;
+  color:#28A000;
+  font-family:"Arial Black", Gadget, sans-serif;
+  display:inline-block;
+  text-decoration:none;
+  padding-left:30px;
+  padding-right:6px;
+  margin:0px;
+  position:absolute;
+  vertical-align: middle;
+
+}
+
+#caption{
+  font-size:22px;
+  padding:0;
+  padding-top:0px;
+  padding-left:0px;
+  margin:0;
+  display:block;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#939393;
+  position:absolute;
+  top: 50%;
+  left: 317px;
+  transform: translate(-50%, -50%);}
+
+.menu{
+  display:inline-grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+.dropbtn {
+  color: black;
+ width:100%;
+  border: none;
+  background-color: inherit;
+
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:16px;
+  font-family:"Arial Black", Gadget, sans-  serif;
+  font-weight:100;
+
+}
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top:100%;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 9px 16px;
+  text-decoration: none;
+  font-size:16px;
+  display: block;
+  background-color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align:center;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover{background-color: #efefef;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content  {display: block;
+                                   }
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover {background-color: #efefef;}
+/*
+.AboutBody{
+  text-align:center;
+  color:black;
+}
+.AboutTitle{
+  margin-top:80px;
+  font-size:32px;
+  font-family:"Arial Black", Gadget, sans-serif;
+}
+.AboutStrapline{
+  margin-top:38px;
+  font-family:	Tahoma, Geneva, sans-serif;
+  font-size:26px;
+}
+
+.AboutArticle{
+  margin-top:38px;
+  font-family:	Tahoma, Geneva, sans-serif;
+  font-size:26px;
+  width:54%;
+  margin-left:auto; margin-right:auto;
+} */
+.AboutGateContainer{
+  position:relative;
+  width:100%;
+  height:600px;
+  background-color:gray;
+}
+.FirstGate{height:620px;
+          position:relative;}
+
+.AboutGateTitleImage{
+  position:absolute;
+  margin-top:5px;
+  top:0%;
+  left:50%;
+  transform:translate(-50%,0);
+  width:100%;
+  height:100%;
+}
+.AboutGateTitle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
+  font-size:40px;
+  letter-spacing: 1.8px;
+  /* font-family:"Bookman Old Style"; */
+  font-family:"Bookman Old Style";
+  font-weight:bold;
+  letter-spacing:3.2px;
+}
+
+.next{position:relative;
+  width:1100px;
+  margin-right:auto;  margin-left:auto}
+
+.AboutSubTitle{
+  position:absolute;
+  top:10%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:black;
+  font-size:40px;
+  letter-spacing: 1.8px;
+  font-family: Arial;
+  font-weight:700;
+}
+
+.AboutSubExplain{
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+  font-size:22px;
+  text-align:left;
+  /* font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; */
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+
+}
+
+.CatchTitle{
+  position:absolute;
+  top:22%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:80%;
+  font-size:26px;
+  text-align:center;
+  /* font-family: Palatino,Palatino Linotype,Palatino LT STD,Book Antiqua,Georgia,serif; */
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+
+  }
+
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  display: table;
+
+}
+
+
+p{
+  color: black;
+  font-family: arial;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFF;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid white;
+    border-width: 0px 0 2px 2px;
+}
+
+
+
+
+
+.scroll-down2 {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+.scroll-down2 {
+  position: absolute;
+  bottom: 85px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid black;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+
+}
+
+.scroll-down2:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid black;
+    border-width: 0px 0 2px 2px;
+}
+.next2{
+  position:relative;
+  width:1100px;
+  margin-right:auto;  margin-left:auto
+}
+
+
+
+
+.scroll-down3 {
+  position: absolute;
+  bottom: 85px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid black;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+
+}
+
+.scroll-down3:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid black;
+    border-width: 0px 0 2px 2px;
+}
+.next3{
+  position:relative;
+  width:1100px;
+  margin-right:auto;  margin-left:auto
+}
+
+.HowItWorksTitle{
+  color:black;
+  font-size:40px;
+  letter-spacing: 1.8px;
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  font-weight:light;
+  text-align:center;
+  padding-top:80px;
+}
+
+.HIWContainer{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  width:100%;
+  position:relative;
+}
+
+
+.HowItWorks{
+ height:600px;
+ width:100%;
+ font-size:22px;
+ margin-top:50px;
+ position:relative;
+ display:inline;
+}
+
+.HowItWorksImage{
+  height:130px; width:130px;
+  position:absolute;
+  left:50%;
+  top:20%;
+  transform:translate(-50%, -50%);
+  margin:0; padding:0;
+
+}
+
+.HotItWorksImageCaption{
+  font-size:23px;
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform:translate(-50%, -50%);
+}
+.HotItWorksImageCaption span{
+  font-size:25px;
+  font-weight:600;
+}
+
+.HotItWorksImageCaption {
+  width:300px;
+}
+
+.next3{position:relative;}
+
+
+.ContactusTitle{
+  position:relative;
+  top:10%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:black;
+  font-size:60px;
+  /* letter-spacing: 1.8px; */
+  font-family: Arial;
+  font-weight:600;
+  margin-bottom:5px;
+  margin-left:150px;
+  margin-top:20px;
+}
+
+.SubTitle{
+  position:relative;
+  top:10%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:black;
+  font-size:60px;
+  /* letter-spacing: 1.8px; */
+  font-family: Arial;
+  font-weight:600;
+  margin-bottom:5px;
+  margin-top:20px;
+}
+.MemberProfile{
+  position:absolute;
+  top:15%;
+  width:220px; height:220px;
+}
+
+.MemberName{
+  position:absolute;
+  top:15%; left:23%;
+  font-size:33px;
+  font-weight:500;
+  font-family:Arial;
+  font-weight:lighter;
+  margin-top:0; padding-top:0;
+}
+.MemberInfo{
+  position:absolute;
+  top:32%; left:23%;
+  font-size:21px;
+  font-weight:500;
+  font-family:Arial;
+  color:gray;
+}
+
+.Members p{
+  position:absolute;
+  text-align:left;
+  top:49%; left:23%;
+  font-size:19px;
+  font-weight:500;
+  font-family:Arial;
+  color:black;
+}
+
+.Members{
+  position:relative;
+  height:280px;
+        }
