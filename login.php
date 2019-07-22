@@ -17,7 +17,7 @@ error_reporting(E_ALL);
   .w3-button {width:150px}
   </style>
 </head>
-</html>
+
 
 
 <body>
@@ -71,25 +71,22 @@ error_reporting(E_ALL);
 
 
 <div class="BackgroundContainer">
-	<div class="header">
-		<h2>login</h2>
+  <div class="SigninWrapper">
+
+	<div class="SignInheader">
+		Log in
 	</div>
+<div>
 	<form method="post" action="login.php">
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" >
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password">
-		</div>
-		<div class="input-group">
+			<input type="text" name="username" placeholder = "Email address">
+			<input type="password" name="password" placeholder = "Password">
 			<button type="submit" class="btn" name="login_btn">Sign in</button>
-		</div>
-		<p>
-			Not yet a member? <a href="register.php">Sign up</a>
+		<p class="registerRedirection">
+			Not yet a member? <a href="register.php"> <span> Sign up </span> </a>
 		</p>
 	</form>
+</div>
+</div>
 </div>
 
 </body>
