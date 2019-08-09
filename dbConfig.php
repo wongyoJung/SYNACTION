@@ -11,7 +11,9 @@ $authorizeURL = 'https://accounts.google.com/o/oauth2/v2/auth';
 // This is Google's OpenID Connect token endpoint
 $tokenURL = 'https://www.googleapis.com/oauth2/v4/token';
 // The URL for this script, used as the redirect URL
-$baseURL = 'http://localhost/synaction/index.php';
+$baseURL = 'http://localhost/synaction/login.php';
+$baseURL2 = 'http://localhost/synaction/index.php';
+
 
 // Create database connection
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

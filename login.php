@@ -1,8 +1,16 @@
-<?php require_once 'dbConfig.php';
+<?php
+require_once 'dbConfig.php';
+include('loginFunctions.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
+
+
+
+if(isset($_SESSION['id_token'])){
+  header('Location: '.$baseURL2);
+  die();
+}
 
 if(isset($_GET['action']) && $_GET['action'] == 'login') {
   unset($_SESSION['id_token']);
@@ -78,7 +86,7 @@ if(isset($_GET['code'])) {
       $first_name = $userData['given_name'];
       $last_name  = $userData['family_name'];
       $email      = $userData['email'];
-      $gender     = '?';
+      $gender     = 'GOOGLE';
       $locale     = $userData['locale'];
       $picture    = $userData['picture'];
       $link       = '?';
@@ -89,19 +97,23 @@ if(isset($_GET['code'])) {
 
       if($result->num_rows > 0){
           // Update user data if already exists
-          $query = "UPDATE users SET first_name = '".$first_name."', last_name = '".$last_name."', gender = '".$gender."', locale = '".$locale."', picture = '".$picture."', link = '".$link."', created = NOW() WHERE email = '".$email."'";
+          $query = "UPDATE users SET first_name = '".$first_name."', last_name = '".$last_name."', authby = '".$gender."',hash='', locale = '".$locale."', picture = '".$picture."', link = '".$link."', created = NOW() WHERE email = '".$email."'";
           $update = $db->query($query);
-          echo $query;
+          // echo $query;
       }
       else{
           // Insert user data
-          $query = "INSERT INTO users VALUES (NULL,'".$first_name."', '".$last_name."', '".$email."', '".$gender."', '".$locale."', '".$picture."', '".$link."', NOW())";
+          $query = "INSERT INTO users VALUES (NULL,'','".$first_name."', '".$last_name."', '".$email."', '".$gender."','', '".$locale."', '".$picture."', '".$link."', NOW())";
+          // echo $query;
+
           $insert = $db->query($query);
-
+          // echo $insert;
       }
+  //
+  // echo '<h1>ok....12</h1>';
 
-}
-  header('Location: ' . $baseURL);
+  }
+  header('Location: ' . $baseURL2);
   die();
 }
 ?>
@@ -219,16 +231,23 @@ if(isset($_GET['code'])) {
 
 
 	<div class="SignInheader">
-		Log in
+	Log in
+  <div class="errors">
+<!-- <?php display_error();?> -->
+  </div>
 	</div>
+
 
 <div style="position:relative;">
 	<form  method="post" action="login.php">
-			<input type="text" name="username" placeholder = "Email address">
+			<input type="text" name="username" placeholder = "Username">
 			<input type="password" name="password" placeholder = "Password">
+      <div class = "ForgotPassword">
+        <a href="ResetPassword.php"> Forgot password</a>
+      </div>
 			<button type="submit" class="SignInbtn" name="login_btn">Sign in</button>
 
-  		<p class="registerRedirection">
+  		<p class="registerRedirection" style="font-size:1em;">
   			Not yet a member? <a href="register.php"> <span> Sign up </span> </a>
   		</p>
 	</form>
@@ -251,4 +270,11 @@ if(isset($_GET['code'])) {
 
 </body>
 
+<script tyle="text/javascript">
+
+  var error = "<?php display_error(); ?>";
+  if(error !== "") alert(error);
+
+
+</script>
 </html>
