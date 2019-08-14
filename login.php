@@ -271,10 +271,10 @@ if(isset($_GET['code'])) {
 </body>
 
 <script tyle="text/javascript">
-
   var error = "<?php display_error(); ?>";
-  if(error !== "") alert(error);
-
-
+  if(error !== "") {
+    alert(error);
+    window.location.replace("login.php");
+  }
 </script>
 </html>

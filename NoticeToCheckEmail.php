@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 <html>
 <head>
 	<title>SYNACTION</title>
-	<link rel = "stylesheet" href ="styleForgotPassword.css">
+	<link rel = "stylesheet" href ="styleEmailConfirm.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="shortcut icon" href="images\Favicon\Favicon2.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -69,24 +69,22 @@ error_reporting(E_ALL);
 
 <div class="BackgroundContainer">
   <div class="SigninWrapper">
+    <div class="notice">
+			<!-- <i class="fa fa-envelope-o" style="font-size:10em; color:#5bc778;"></i> -->
+			<span class = "emailIcon" style="font-size:10em; display:block; text-align:center;">&#9993;</span>
+		<span style="font-size:2.3em; display:block; text-align:center;">  Confirm your email address </span>
 
-    <h1 class="ResetTitle"> Reset your password </h1>
-    <form method="post" action="?action=reset">
-			<div class="input-group">
-      		<input type="email" name="email" placeholder="email">
-		</div>
-			<div class="input-group">
-      			<input type="text" name="username" 	placeholder="username">
-				</div>
-      <button type="submit" class="btn" name="reset_btn"> Get verfication email </button>
-    </form>
-	</div>
+
+				<span style="text-align:center; font-size:1.2em; display:block;">
+					<br> Confirmation email has been to sent to your email <br>
+				Click on the link in the email to activate your account </span>
+
+    </div>
+
+
+
 </div>
-
-    </html>
-
-
-
+</div>
 <script tyle="text/javascript">
   var error = "<?php display_error(); ?>";
   if(error !== "") {

@@ -39,23 +39,20 @@ function register(){
 	$pattern = '/^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/';
 
 	// form validation: ensure that the form is correctly filled
-	if (empty($username)) {
-		array_push($errors, "Username is required");
+	if (empty($username) or empty($email) or empty($password_1) or empty($password_2)) {
+		array_push($errors, "Fill the forms");
 	}
-	if (empty($email)) {
-		array_push($errors, "Email is required");
-	}
-	if (empty($password_1)) {
-		array_push($errors, "Password is required");
-	}
+
+	else{
 	if ($password_1 != $password_2) {
 		array_push($errors, "The two passwords do not match");
 	}
-
+ else{
 	if(!preg_match($pattern ,"$password_1")){
 	array_push($errors, "Password must be at least 8 characters , contain at least one lower case letter, one upper case letter and one digit");
+			}
 }
-
+}
 	// register user if there are no errors in the form
 	if (count($errors) == 0) {
 		$password = md5($password_1);//encrypt the password before saving in the database
@@ -92,15 +89,15 @@ function register(){
 			 $_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
 			 $_SESSION['success']  = "You are now logged in";
  		emailVerification($hash);
-		echo "<script>alert('check you email')</script>";
-	 		// header('Location: '.$baseURL2);
+
+	 	header('Location:NoticeToCheckEmail.php');
 }
 		 // }
 	}
 
 }
 	else{
-			echo "<script>alert('err')</script>";
+
 	}
 }
 
@@ -124,12 +121,20 @@ function display_error() {
 				echo $error;
 			}
 	}
+}
+
+function display_error_2() {
+
+	global $errors;
+$lastEl = array_values(array_slice($errors, -1))[0];
+echo $lastEl;
+}
 // 	if(isset($error)){
 // echo '<script>console.log('.json_encode($errors).')</script>';
 // }
 // $errors   = array();
 // unset($GLOBALS[_POST])
-}
+
 
 
 function e($val){
@@ -184,6 +189,7 @@ function login(){
 			array_push($errors, "Wrong username/password combination");
 		}
 	}
+
 	unset($_POST['login_btn']);
 }
 
